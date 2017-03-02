@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple markers</title>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var myLatLng = {
+                lat: 55.673739,
+                lng: 12.568147
+            }
+            var myLatLng2 = {
+                lat: 55.775390,
+                lng: 12.577750
+            };
+            var myLatLng3 = {
+                lat: 55.260985,
+                lng: 11.863134
+            };
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: myLatLng
+            });
+
+            var marker1 = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Tivoli'
+            });
+            var marker2 = new google.maps.Marker({
+                position: myLatLng2,
+                map: map,
+                title: 'Bakken'
+            });
+            var marker3 = new google.maps.Marker({
+                position: myLatLng3,
+                map: map,
+                title: 'BonBon-land'
+            });
+        }
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARsQxBM-1a0w6Y2FUN3HdM27zTs5K7TTo&callback=initMap">
+
+
+    </script>
+</body>
+
+</html>
